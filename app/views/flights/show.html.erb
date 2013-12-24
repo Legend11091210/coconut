@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<div class="center hero-unit">
+<p>
+  <b>Departure:</b>
+  <%= @flight.departure %>
+</p>
+
+<p>
+  <b>Arrival:</b>
+  <%= @flight.arrival %>
+</p>
+
+<p>
+  <b>Destination:</b>
+  <%= @flight.destination %>
+</p>
+
+<p>
+  <b>Baggage allowance:</b>
+  <%= @flight.baggage_allowance %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%= @flight.capacity %>
+</div>
+</p>
+<center>
+<h2>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h2>
+<%= render :partial=>"seat_list", :locals=>{:seats=>@flight.seats} %>
+<h2>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h2>
+<%= render :partial=>"new_seat", :locals=>{:seat=>Seat.new(:flight_id=>@flight.id)} %>
+
+<%= link_to 'Edit', edit_flight_path(@flight) %> 
+<%= link_to 'Back', flights_path %>
+</center>

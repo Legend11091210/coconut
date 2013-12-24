@@ -1,0 +1,10 @@
+<% provide(:title, @user.name) %>
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
+<div class="center hero-unit">
+  <h2>Hello! Welcome To The Air Tickets!</h2>
+  <%= link_to "Book Tickets Now!", flights_path, class: "btn btn-large btn-primary" %>
+</div>
+
